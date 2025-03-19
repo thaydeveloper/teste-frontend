@@ -9,7 +9,7 @@ import imageminMozjpeg from 'imagemin-mozjpeg';
 import imageminPngquant from 'imagemin-pngquant';
 import imageminGifsicle from 'imagemin-gifsicle';
 import imageminWebp from 'imagemin-webp';
-import tsconfigPaths from 'vite-tsconfig-paths'; // Importe o plugin
+import tsconfigPaths from 'vite-tsconfig-paths';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const isProd = process.env.NODE_ENV === 'production';
@@ -73,7 +73,7 @@ export default defineConfig({
         ],
       },
     }),
-    tsconfigPaths(), // Adicione o plugin aqui
+    tsconfigPaths(),
   ],
   resolve: {
     alias: {
