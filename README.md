@@ -146,7 +146,7 @@ O projeto utiliza os seguintes arquivos de configuração:
    yarn start
    ```
 
-5. Acesse a aplicação em `https://localhost:3000/teste-frontend/`
+5. Acesse a aplicação em `http://localhost:3000/teste-frontend/`
 
 ## 🚀 Como Executar em Produção
 
