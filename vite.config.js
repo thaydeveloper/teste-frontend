@@ -72,7 +72,7 @@ export default defineConfig({
       devOptions: {
         enabled: true,
         type: 'module',
-        suppressWarnings: true, // Desativa os avisos em ambiente de desenvolvimento
+        suppressWarnings: true,
         navigateFallback: 'index.html',
       },
       workbox: {
@@ -102,7 +102,7 @@ export default defineConfig({
               cacheName: 'font-cache',
               expiration: {
                 maxEntries: 10,
-                maxAgeSeconds: 60 * 60 * 24 * 365, // 1 ano
+                maxAgeSeconds: 60 * 60 * 24 * 365,
               },
             },
           },
