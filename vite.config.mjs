@@ -5,7 +5,11 @@ import viteImagemin from 'vite-plugin-imagemin';
 
 const isProd = process.env.NODE_ENV === 'production';
 
+const base = process.env.BASE_URL || '/teste-frontend/';
+
 export default defineConfig({
+  base,
+
   server: {
     port: 3000,
     open: true,
@@ -46,20 +50,20 @@ export default defineConfig({
         theme_color: '#ffffff',
         background_color: '#f5f5f5',
         display: 'standalone',
-        start_url: '/',
+        start_url: './',
         icons: [
           {
-            src: '/icons/android-chrome-192x192.png',
+            src: './icons/android-chrome-192x192.png',
             sizes: '192x192',
             type: 'image/png',
           },
           {
-            src: '/icons/android-chrome-512x512.png',
+            src: './icons/android-chrome-512x512.png',
             sizes: '512x512',
             type: 'image/png',
           },
           {
-            src: '/icons/maskable-512x512.png',
+            src: './icons/maskable-512x512.png',
             sizes: '512x512',
             type: 'image/png',
             purpose: 'maskable',

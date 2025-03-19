@@ -168,11 +168,3 @@ O projeto utiliza os seguintes arquivos de configuração:
    # ou
    yarn preview
    ```
-
-<!-- 4. Para deploy em produção:
-
-   - **Netlify/Vercel**: Conecte o repositório e configure o comando de build como `npm run build` e o diretório de publicação como `dist`
-
-   - **Servidor web tradicional**: Copie o conteúdo da pasta `dist` para a pasta raiz do seu servidor web
-
-   - **Docker**: Utilize um servidor web como Nginx para servir os arquivos estáticos do diretório `dist` -->
