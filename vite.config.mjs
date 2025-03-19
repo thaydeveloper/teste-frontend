@@ -4,28 +4,46 @@ import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 import { VitePWA } from 'vite-plugin-pwa';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import VitePluginImagemin from '@vheemstra/vite-plugin-imagemin';
-import imageminMozjpeg from 'imagemin-mozjpeg';
-import imageminPngquant from 'imagemin-pngquant';
-import imageminGifsicle from 'imagemin-gifsicle';
-import imageminWebp from 'imagemin-webp';
 import tsconfigPaths from 'vite-tsconfig-paths';
+import mkcert from 'vite-plugin-mkcert';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const isProd = process.env.NODE_ENV === 'production';
-const base = process.env.BASE_URL || '/teste-frontend';
+const base = process.env.BASE_URL || '/';
 
 export default defineConfig({
   base,
   plugins: [
     react(),
-    ViteImageOptimizer(),
-    VitePluginImagemin({
-      plugins: {
-        jpg: imageminMozjpeg(),
-        png: imageminPngquant(),
-        gif: imageminGifsicle(),
-        webp: imageminWebp(),
+    ViteImageOptimizer({
+      png: {
+        quality: 70,
+      },
+      jpeg: {
+        quality: 70,
+      },
+      jpg: {
+        quality: 70,
+      },
+      webp: {
+        lossless: true,
+      },
+      // Configurações adicionais para outros formatos de imagem
+      gif: {
+        interlaced: false,
+      },
+      svg: {
+        multipass: true,
+        plugins: [
+          {
+            name: 'preset-default',
+            params: {
+              overrides: {
+                removeViewBox: false,
+              },
+            },
+          },
+        ],
       },
     }),
     VitePWA({
@@ -74,6 +92,7 @@ export default defineConfig({
       },
     }),
     tsconfigPaths(),
+    mkcert(),
   ],
   resolve: {
     alias: {
@@ -92,6 +111,7 @@ export default defineConfig({
     outDir: 'dist',
     assetsDir: 'assets',
     minify: 'terser',
+    sourcemap: true,
     terserOptions: {
       compress: {
         drop_console: true,
@@ -108,8 +128,27 @@ export default defineConfig({
     },
   },
   server: {
+    https: false,
+    host: '0.0.0.0',
     port: 3000,
     open: true,
+    cors: true,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3000',
+        changeOrigin: true,
+        secure: false,
+      },
+    },
+    headers: {
+      'X-Content-Type-Options': 'nosniff',
+      'X-Frame-Options': 'DENY',
+      'X-XSS-Protection': '1; mode=block',
+      'Content-Security-Policy':
+        "default-src 'self'; img-src 'self' https: data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval';",
+      'Strict-Transport-Security': 'max-age=31536000; includeSubDomains',
+      'Referrer-Policy': 'strict-origin-when-cross-origin',
+    },
   },
   test: {
     globals: true,

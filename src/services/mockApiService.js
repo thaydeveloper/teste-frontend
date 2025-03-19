@@ -15,8 +15,6 @@ export const MockApiService = {
   getProducts: async ({ page = 1, limit = 10, search = '', priceFilter = 'all' }) => {
     await new Promise(resolve => setTimeout(resolve, 300));
 
-    console.log(`[API] Buscando: página ${page}, busca: "${search}", filtro: ${priceFilter}`);
-
     let filteredProducts = [...mockProductsData];
 
     if (search?.trim()) {

@@ -87,7 +87,7 @@ Antes de executar o projeto, é necessário configurar corretamente as variávei
 
 O projeto utiliza os seguintes arquivos de configuração:
 
-- `.env.development` - Configurações para ambiente de desenvolvimento ou produção
+- `.env` - Configurações para ambiente de desenvolvimento ou produção
 
 ### Variáveis de Ambiente Disponíveis
 
@@ -123,7 +123,7 @@ O projeto utiliza os seguintes arquivos de configuração:
 1. Clone o repositório
 
    ```bash
-   git clone [URL_DO_REPOSITORIO]
+   git clone [git@github.com:thaydeveloper/teste-frontend.git]
    cd teste-frontend
    ```
 
@@ -147,7 +147,7 @@ O projeto utiliza os seguintes arquivos de configuração:
    yarn start
    ```
 
-5. Acesse a aplicação em `http://localhost:3000`
+5. Acesse a aplicação em `https://localhost:4173/`
 
 ## 🚀 Como Executar em Produção
 
@@ -168,3 +168,5 @@ O projeto utiliza os seguintes arquivos de configuração:
    # ou
    yarn preview
    ```
+
+4. Para testar o app online [https://thaydeveloper.github.io/teste-frontend/]

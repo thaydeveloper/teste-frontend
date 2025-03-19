@@ -37,3 +37,13 @@ logs
 *.swo
 .DS_Store
 Thumbs.db
+
+# Security
+.npmrc
+.yarnrc
+.pnpmrc
+
+# Cache
+.cache/
+.npm/
+.eslintcache
