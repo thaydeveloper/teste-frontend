@@ -3,13 +3,12 @@ import react from '@vitejs/plugin-react';
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 import { VitePWA } from 'vite-plugin-pwa';
 import path from 'path';
-import { fileURLToPath } from 'url';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import mkcert from 'vite-plugin-mkcert';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const __dirname = path.resolve();
 const isProd = process.env.NODE_ENV === 'production';
-// Ajuste para o GitHub Pages
+
 const base = process.env.BASE_URL || '/teste-frontend/';
 
 export default defineConfig({
@@ -29,7 +28,6 @@ export default defineConfig({
       webp: {
         lossless: true,
       },
-      // Configurações adicionais para outros formatos de imagem
       gif: {
         interlaced: false,
       },
@@ -74,9 +72,17 @@ export default defineConfig({
       devOptions: {
         enabled: true,
         type: 'module',
+        suppressWarnings: true, // Desativa os avisos em ambiente de desenvolvimento
+        navigateFallback: 'index.html',
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,ico,png,svg,jpg}'],
+        globPatterns: ['**/*.{js,css,html,ico,png,svg,jpg,woff,woff2,ttf,eot}'],
+        navigateFallback: 'index.html',
+        cleanupOutdatedCaches: true,
+        skipWaiting: true,
+        clientsClaim: true,
+
+        globDirectory: isProd ? 'dist' : null,
         runtimeCaching: [
           {
             urlPattern: /^https:\/\/api\./i,
@@ -86,6 +92,17 @@ export default defineConfig({
               expiration: {
                 maxEntries: 10,
                 maxAgeSeconds: 60 * 60 * 24,
+              },
+            },
+          },
+          {
+            urlPattern: /^https:\/\/fonts\./i,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'font-cache',
+              expiration: {
+                maxEntries: 10,
+                maxAgeSeconds: 60 * 60 * 24 * 365, // 1 ano
               },
             },
           },
@@ -127,7 +144,6 @@ export default defineConfig({
         },
       },
     },
-    // Adicionar configurações para evitar problemas com crypto
     target: 'es2018',
     commonjsOptions: {
       include: [/node_modules/],
@@ -152,7 +168,7 @@ export default defineConfig({
       'X-Frame-Options': 'DENY',
       'X-XSS-Protection': '1; mode=block',
       'Content-Security-Policy':
-        "default-src 'self'; img-src 'self' https: data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval';",
+        "default-src 'self'; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval'; font-src 'self' data: https://fonts.gstatic.com https://*;",
       'Strict-Transport-Security': 'max-age=31536000; includeSubDomains',
       'Referrer-Policy': 'strict-origin-when-cross-origin',
     },
