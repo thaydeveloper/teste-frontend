@@ -1,14 +1,14 @@
-import { useState, useRef, useCallback, useEffect } from 'react';
+import { useState, useRef, useCallback } from 'react';
 import { useQueryClient } from '@tanstack/react-query';
 import { useProducts } from './useProducts';
+import { useInfiniteScroll } from './useInfiniteScroll';
+import { mapProductsFromPages, getTotalProductsCount } from '../utils/productMappers';
 
 export function useHomeContainer() {
   const [searchTerm, setSearchTerm] = useState('');
   const [priceFilter, setPriceFilter] = useState('all');
   const queryClient = useQueryClient();
   const resetPaginationRef = useRef(0);
-  const observerRef = useRef(null);
-  const observedNodeRef = useRef(null);
 
   const {
     data,
@@ -21,51 +21,13 @@ export function useHomeContainer() {
     refetch,
   } = useProducts(searchTerm, priceFilter, resetPaginationRef.current);
 
-  const products =
-    data?.pages?.flatMap((page, pageIndex) => {
-      if (!page?.products?.length) return [];
+  const products = mapProductsFromPages(data?.pages);
 
-      return page.products.map((product, index) => ({
-        id: `${pageIndex}-${index}`,
-        name: product.productName || product.name || 'Sem nome',
-        productName: product.productName || product.name || 'Sem nome',
-        description: product.productDescription || product.description || 'Sem descrição',
-        image: product.productImg || product.image || 'https://via.placeholder.com/150',
-        price: parseFloat(
-          product.productPrice?.replace('R$ ', '')?.replace(',', '.') || product.price || '0'
-        ),
-        brand: product.productName?.split(' ')[0] || product.name?.split(' ')[0] || '',
-      }));
-    }) || [];
-
-  useEffect(() => {
-    if (observerRef.current) observerRef.current.disconnect();
-
-    if (isLoading || isFetchingNextPage || !hasNextPage) return;
-
-    observerRef.current = new IntersectionObserver(
-      entries => {
-        if (entries[0].isIntersecting && hasNextPage) {
-          fetchNextPage();
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (observedNodeRef.current) {
-      observerRef.current.observe(observedNodeRef.current);
-    }
-
-    return () => observerRef.current?.disconnect();
-  }, [isLoading, isFetchingNextPage, hasNextPage, fetchNextPage]);
-
-  const lastProductRef = useCallback(node => {
-    observedNodeRef.current = node;
-    if (node && observerRef.current) {
-      observerRef.current.disconnect();
-      observerRef.current.observe(node);
-    }
-  }, []);
+  const lastProductRef = useInfiniteScroll(fetchNextPage, {
+    isLoading,
+    isFetchingMore: isFetchingNextPage,
+    hasMore: hasNextPage,
+  });
 
   const handleSearch = useCallback(
     value => {
@@ -85,7 +47,7 @@ export function useHomeContainer() {
     [queryClient]
   );
 
-  const totalProducts = data?.pages?.[0]?.total || 0;
+  const totalProducts = getTotalProductsCount(data?.pages);
 
   return {
     products,
