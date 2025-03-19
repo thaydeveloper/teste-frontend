@@ -12,7 +12,6 @@ Uma aplicação moderna de catálogo de produtos com pesquisa, filtragem e carre
 - **Filtragem por faixa de preço** para melhor navegação
 - **Carregamento infinito** para visualização contínua de produtos
 - **UI responsiva** adaptada para todos os dispositivos
-- **Tratamento de erros** com opção de tentar novamente
 - **Indicadores de carregamento** para melhor experiência do usuário
 - **Contagem de produtos** exibindo resultados encontrados
 
@@ -49,6 +48,7 @@ src/
 - **SearchBar** - Componente de busca com estado controlado
 - **LoadingIndicator** - Indicador visual de carregamento
 - **ErrorMessage** - Exibição de erros com opção de tentar novamente
+- **Home** - Componente principal
 
 ## 🔄 Fluxo de Dados
 
@@ -77,7 +77,6 @@ A aplicação implementa:
 - ARIA labels e roles para melhor navegação com leitores de tela
 - Estados "live" para atualizações dinâmicas
 - Foco adequado em elementos interativos
-- Textos alternativos e mensagens de status
 
 ## 🔧 Configuração de Ambiente
 
@@ -170,3 +169,21 @@ O projeto utiliza os seguintes arquivos de configuração:
    ```
 
 4. Para testar o app online [https://thaydeveloper.github.io/teste-frontend/]
+
+## 🚀 Deploy Manual
+
+Este projeto não utiliza CI/CD. Para fazer deploy:
+
+1. Construa a aplicação localmente:
+
+   ```bash
+   npm run build
+   ```
+
+2. Para deploy no GitHub Pages, execute:
+
+   ```bash
+   npm run deploy
+   ```
+
+3. Para outros ambientes, copie a pasta `dist` para seu servidor.

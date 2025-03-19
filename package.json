@@ -31,6 +31,7 @@
     "@testing-library/user-event": "^14.6.1",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
+    "@vheemstra/vite-plugin-imagemin": "^2.0.0",
     "@vitejs/plugin-react": "^4.0.3",
     "autoprefixer": "^10.4.16",
     "eslint": "^8.57.1",
@@ -43,6 +44,12 @@
     "eslint-plugin-tailwindcss": "^3.18.0",
     "gh-pages": "^6.1.1",
     "husky": "^8.0.0",
+    "imagemin-gifsicle": "^7.0.0",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-optipng": "^8.0.0",
+    "imagemin-pngquant": "^10.0.0",
+    "imagemin-webp": "^8.0.0",
+    "jsdom": "^22.1.0",
     "lint-staged": "^15.2.2",
     "postcss": "^8.4.31",
     "prettier": "^3.5.3",
@@ -57,6 +64,9 @@
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^1.6.1",
     "workbox-window": "^7.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   },
   "lint-staged": {
     "*.{js,jsx}": [

@@ -9,7 +9,8 @@ import mkcert from 'vite-plugin-mkcert';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const isProd = process.env.NODE_ENV === 'production';
-const base = process.env.BASE_URL || '/';
+// Ajuste para o GitHub Pages
+const base = process.env.BASE_URL || '/teste-frontend/';
 
 export default defineConfig({
   base,
@@ -125,6 +126,12 @@ export default defineConfig({
           vendor: ['axios'],
         },
       },
+    },
+    // Adicionar configurações para evitar problemas com crypto
+    target: 'es2018',
+    commonjsOptions: {
+      include: [/node_modules/],
+      transformMixedEsModules: true,
     },
   },
   server: {
