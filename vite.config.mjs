@@ -1,147 +1,112 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 import { VitePWA } from 'vite-plugin-pwa';
-import viteImagemin from '@vheemstra/vite-plugin-imagemin';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import VitePluginImagemin from '@vheemstra/vite-plugin-imagemin';
+import imageminMozjpeg from 'imagemin-mozjpeg';
+import imageminPngquant from 'imagemin-pngquant';
+import imageminGifsicle from 'imagemin-gifsicle';
+import imageminWebp from 'imagemin-webp';
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const isProd = process.env.NODE_ENV === 'production';
-
 const base = process.env.BASE_URL || '/teste-frontend';
 
 export default defineConfig({
   base,
-
-  server: {
-    port: 3000,
-    open: true,
-    host: '0.0.0.0',
-  },
-
-  preview: {
-    port: 4173,
-    open: true,
-    host: '0.0.0.0',
-  },
-
-  build: {
-    outDir: 'dist',
-    minify: 'esbuild',
-    target: 'es2018',
-    reportCompressedSize: false,
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom', '@tanstack/react-query'],
-        },
-      },
-    },
-  },
-
   plugins: [
     react(),
-
+    ViteImageOptimizer(),
+    VitePluginImagemin({
+      plugins: {
+        jpg: imageminMozjpeg(),
+        png: imageminPngquant(),
+        gif: imageminGifsicle(),
+        webp: imageminWebp(),
+      },
+    }),
     VitePWA({
       registerType: 'autoUpdate',
       injectRegister: 'auto',
-
       manifest: {
-        name: 'Catálogo de Smartphones',
-        short_name: 'SmartCatalog',
-        description: 'Catálogo de smartphones com as melhores opções',
+        name: 'Teste Frontend',
+        short_name: 'TestApp',
+        description: 'Frontend Test Application',
         theme_color: '#ffffff',
         background_color: '#f5f5f5',
         display: 'standalone',
-        start_url: './',
+        start_url: base,
         icons: [
           {
-            src: './icons/android-chrome-192x192.png',
+            src: '/icons/icon-192x192.png',
             sizes: '192x192',
             type: 'image/png',
           },
           {
-            src: './icons/android-chrome-512x512.png',
+            src: '/icons/icon-512x512.png',
             sizes: '512x512',
             type: 'image/png',
-          },
-          {
-            src: './icons/maskable-512x512.png',
-            sizes: '512x512',
-            type: 'image/png',
-            purpose: 'maskable',
           },
         ],
       },
       devOptions: {
-        enabled: process.env.VITE_DISABLE_PWA !== 'true',
+        enabled: true,
         type: 'module',
       },
-
       workbox: {
-        globDirectory: isProd ? 'dist' : null,
-        globPatterns: ['**/*.{html,js,css,woff2}'],
+        globPatterns: ['**/*.{js,css,html,ico,png,svg,jpg}'],
         runtimeCaching: [
           {
-            urlPattern: /\.(?:png|jpg|jpeg|svg|gif|webp)$/,
-            handler: 'CacheFirst',
-            options: {
-              cacheName: 'images',
-              expiration: { maxEntries: 50 },
-            },
-          },
-
-          {
-            urlPattern: /\.(?:js|css)$/,
-            handler: 'StaleWhileRevalidate',
-            options: {
-              cacheName: 'assets',
-            },
-          },
-
-          {
-            urlPattern: /\.json$/,
-            handler: 'NetworkFirst',
-            options: {
-              cacheName: 'api-data',
-              expiration: {
-                maxEntries: 10,
-                maxAgeSeconds: 60 * 5,
-              },
-              networkTimeoutSeconds: 10,
-            },
-          },
-
-          {
-            urlPattern: new RegExp('^https?://.*/(api|products)'),
+            urlPattern: /^https:\/\/api\./i,
             handler: 'NetworkFirst',
             options: {
               cacheName: 'api-cache',
               expiration: {
                 maxEntries: 10,
-                maxAgeSeconds: 60 * 5,
+                maxAgeSeconds: 60 * 60 * 24,
               },
-              networkTimeoutSeconds: 10,
             },
           },
         ],
-        inlineWorkboxRuntime: true,
-        cleanupOutdatedCaches: true,
-        skipWaiting: true,
-        clientsClaim: true,
       },
     }),
-
-    viteImagemin({
-      gifsicle: { optimizationLevel: 7 },
-      optipng: { optimizationLevel: 5 },
-      mozjpeg: { quality: 75 },
-      pngquant: { quality: [0.7, 0.8], speed: 4 },
-      webp: { quality: 75 },
-    }),
   ],
-
   resolve: {
     alias: {
-      '@': '/src',
-      '@components': '/src/components',
+      '@': path.resolve(__dirname, 'src'),
+      '@components': path.resolve(__dirname, 'src/components'),
+      '@assets': path.resolve(__dirname, 'src/assets'),
+      '@styles': path.resolve(__dirname, 'src/styles'),
+      '@hooks': path.resolve(__dirname, 'src/hooks'),
+      '@utils': path.resolve(__dirname, 'src/utils'),
+      '@views': path.resolve(__dirname, 'src/views'),
+      '@services': path.resolve(__dirname, 'src/services'),
+      '@context': path.resolve(__dirname, 'src/context'),
     },
+  },
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+      },
+    },
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          react: ['react', 'react-dom'],
+          vendor: ['axios'],
+        },
+      },
+    },
+  },
+  server: {
+    port: 3000,
+    open: true,
   },
 });
