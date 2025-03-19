@@ -1,11 +1,11 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
-import viteImagemin from 'vite-plugin-imagemin';
+import viteImagemin from '@vheemstra/vite-plugin-imagemin';
 
 const isProd = process.env.NODE_ENV === 'production';
 
-const base = process.env.BASE_URL || '/teste-frontend/';
+const base = process.env.BASE_URL || '/teste-frontend';
 
 export default defineConfig({
   base,
@@ -71,7 +71,7 @@ export default defineConfig({
         ],
       },
       devOptions: {
-        enabled: true,
+        enabled: process.env.VITE_DISABLE_PWA !== 'true',
         type: 'module',
       },
 
