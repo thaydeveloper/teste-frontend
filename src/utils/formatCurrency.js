@@ -1,15 +1,8 @@
-/**
- * Formata um valor para exibição como moeda brasileira (BRL)
- * @param {number|string} value - Valor a ser formatado
- * @returns {string} Valor formatado como moeda
- */
 export const formatCurrency = value => {
-  // Retornar direto se o valor for undefined ou null
   if (value === undefined || value === null) {
     return 'R$ 0,00';
   }
 
-  // Garantir que o valor seja um número
   const numValue =
     typeof value === 'string'
       ? parseFloat(value.replace(/[^\d,.-]/g, '').replace(',', '.'))

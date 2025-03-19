@@ -9,6 +9,7 @@ import imageminMozjpeg from 'imagemin-mozjpeg';
 import imageminPngquant from 'imagemin-pngquant';
 import imageminGifsicle from 'imagemin-gifsicle';
 import imageminWebp from 'imagemin-webp';
+import tsconfigPaths from 'vite-tsconfig-paths'; // Importe o plugin
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const isProd = process.env.NODE_ENV === 'production';
@@ -72,6 +73,7 @@ export default defineConfig({
         ],
       },
     }),
+    tsconfigPaths(), // Adicione o plugin aqui
   ],
   resolve: {
     alias: {
@@ -108,5 +110,21 @@ export default defineConfig({
   server: {
     port: 3000,
     open: true,
+  },
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: './src/tests/setup.js',
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+      '@components': path.resolve(__dirname, 'src/components'),
+      '@assets': path.resolve(__dirname, 'src/assets'),
+      '@styles': path.resolve(__dirname, 'src/styles'),
+      '@hooks': path.resolve(__dirname, 'src/hooks'),
+      '@utils': path.resolve(__dirname, 'src/utils'),
+      '@views': path.resolve(__dirname, 'src/views'),
+      '@services': path.resolve(__dirname, 'src/services'),
+      '@context': path.resolve(__dirname, 'src/context'),
+    },
   },
 });

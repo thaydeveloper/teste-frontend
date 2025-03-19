@@ -11,8 +11,6 @@ export function registerServiceWorker() {
           }
         },
         onRegistered(registration) {
-          console.log('Service worker registrado com sucesso!');
-
           if (registration && registration.active) {
             setInterval(
               () => {

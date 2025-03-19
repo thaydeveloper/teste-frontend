@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import ProductCard from '../components/products/ProductCard';
+import ProductCard from '../components/products/ProductCard/ProductCard';
 
 describe('ProductCard Component', () => {
   it('renderiza corretamente o card de produto com todas as informações', () => {
@@ -24,9 +24,8 @@ describe('ProductCard Component', () => {
     ).toBeInTheDocument();
 
     expect(screen.getByRole('img')).toHaveAttribute('src', mockProduct.image);
+    expect(screen.getByRole('img')).toHaveAttribute('alt', `Imagem do produto ${mockProduct.name}`);
 
-    expect(screen.getByRole('img')).toHaveAttribute('alt', mockProduct.name);
-
-    expect(screen.getByRole('button')).toHaveTextContent('Ver detalhes');
+    expect(screen.getByRole('button')).toHaveTextContent('Detalhes');
   });
 });
