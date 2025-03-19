@@ -1,0 +1,302 @@
+[
+  {
+    "productName": "Produto 1",
+    "productDescription": "Descrição do Produto 1",
+    "productImg": "https://st2.depositphotos.com/1017228/9399/i/450/depositphotos_93990140-stock-photo-cheerful-woman-showing-blank-smartphone.jpg",
+    "productPrice": "R$ 10,00"
+  },
+  {
+    "productName": "iPhone 12",
+    "productDescription": "Apple iPhone 12 com 64GB",
+    "productImg": "https://st2.depositphotos.com/1017228/9399/i/450/depositphotos_93990140-stock-photo-cheerful-woman-showing-blank-smartphone.jpg",
+    "productPrice": "R$ 20,00"
+  },
+  {
+    "productName": "Samsung Galaxy S21",
+    "productDescription": "Samsung Galaxy S21 com 128GB",
+    "productImg": "https://st2.depositphotos.com/1017228/9399/i/450/depositphotos_93990140-stock-photo-cheerful-woman-showing-blank-smartphone.jpg",
+    "productPrice": "R$ 30,00"
+  },
+  {
+    "productName": "Xiaomi Mi 11",
+    "productDescription": "Xiaomi Mi 11 com 256GB",
+    "productImg": "https://st2.depositphotos.com/1017228/9399/i/450/depositphotos_93990140-stock-photo-cheerful-woman-showing-blank-smartphone.jpg",
+    "productPrice": "R$ 40,00"
+  },
+  {
+    "productName": "OnePlus 9",
+    "productDescription": "OnePlus 9 com 128GB",
+    "productImg": "https://st2.depositphotos.com/1017228/9399/i/450/depositphotos_93990140-stock-photo-cheerful-woman-showing-blank-smartphone.jpg",
+    "productPrice": "R$ 50,00"
+  },
+  {
+    "productName": "Google Pixel 5",
+    "productDescription": "Google Pixel 5 com 128GB",
+    "productImg": "https://st2.depositphotos.com/1017228/9399/i/450/depositphotos_93990140-stock-photo-cheerful-woman-showing-blank-smartphone.jpg",
+    "productPrice": "R$ 60,00"
+  },
+  {
+    "productName": "Sony Xperia 1 II",
+    "productDescription": "Sony Xperia 1 II com 256GB",
+    "productImg": "https://st2.depositphotos.com/1017228/9399/i/450/depositphotos_93990140-stock-photo-cheerful-woman-showing-blank-smartphone.jpg",
+    "productPrice": "R$ 70,00"
+  },
+  {
+    "productName": "Huawei P40 Pro",
+    "productDescription": "Huawei P40 Pro com 256GB",
+    "productImg": "https://st2.depositphotos.com/1017228/9399/i/450/depositphotos_93990140-stock-photo-cheerful-woman-showing-blank-smartphone.jpg",
+    "productPrice": "R$ 80,00"
+  },
+  {
+    "productName": "Nokia 8.3 5G",
+    "productDescription": "Nokia 8.3 5G com 128GB",
+    "productImg": "https://st2.depositphotos.com/1017228/9399/i/450/depositphotos_93990140-stock-photo-cheerful-woman-showing-blank-smartphone.jpg",
+    "productPrice": "R$ 90,00"
+  },
+  {
+    "productName": "Motorola Edge Plus",
+    "productDescription": "Motorola Edge Plus com 256GB",
+    "productImg": "https://st2.depositphotos.com/1017228/9399/i/450/depositphotos_93990140-stock-photo-cheerful-woman-showing-blank-smartphone.jpg",
+    "productPrice": "R$ 100,00"
+  },
+  {
+    "productName": "Asus ROG Phone 5",
+    "productDescription": "Asus ROG Phone 5 com 256GB",
+    "productImg": "https://st2.depositphotos.com/1017228/9399/i/450/depositphotos_93990140-stock-photo-cheerful-woman-showing-blank-smartphone.jpg",
+    "productPrice": "R$ 110,00"
+  },
+  {
+    "productName": "LG Wing",
+    "productDescription": "LG Wing com 128GB",
+    "productImg": "https://st2.depositphotos.com/1017228/9399/i/450/depositphotos_93990140-stock-photo-cheerful-woman-showing-blank-smartphone.jpg",
+    "productPrice": "R$ 120,00"
+  },
+  {
+    "productName": "Oppo Find X3 Pro",
+    "productDescription": "Oppo Find X3 Pro com 256GB",
+    "productImg": "https://st2.depositphotos.com/1017228/9399/i/450/depositphotos_93990140-stock-photo-cheerful-woman-showing-blank-smartphone.jpg",
+    "productPrice": "R$ 130,00"
+  },
+  {
+    "productName": "Realme GT",
+    "productDescription": "Realme GT com 128GB",
+    "productImg": "https://st2.depositphotos.com/1017228/9399/i/450/depositphotos_93990140-stock-photo-cheerful-woman-showing-blank-smartphone.jpg",
+    "productPrice": "R$ 140,00"
+  },
+  {
+    "productName": "Vivo X60 Pro",
+    "productDescription": "Vivo X60 Pro com 256GB",
+    "productImg": "https://st2.depositphotos.com/1017228/9399/i/450/depositphotos_93990140-stock-photo-cheerful-woman-showing-blank-smartphone.jpg",
+    "productPrice": "R$ 150,00"
+  },
+  {
+    "productName": "ZTE Axon 30 Ultra",
+    "productDescription": "ZTE Axon 30 Ultra com 256GB",
+    "productImg": "https://st2.depositphotos.com/1017228/9399/i/450/depositphotos_93990140-stock-photo-cheerful-woman-showing-blank-smartphone.jpg",
+    "productPrice": "R$ 160,00"
+  },
+  {
+    "productName": "Lenovo Legion Phone Duel",
+    "productDescription": "Lenovo Legion Phone Duel com 256GB",
+    "productImg": "https://st2.depositphotos.com/1017228/9399/i/450/depositphotos_93990140-stock-photo-cheerful-woman-showing-blank-smartphone.jpg",
+    "productPrice": "R$ 170,00"
+  },
+  {
+    "productName": "iPhone 12 Pro Max",
+    "productDescription": "Apple iPhone 12 Pro Max com 512GB",
+    "productImg": "https://st2.depositphotos.com/1017228/9399/i/450/depositphotos_93990140-stock-photo-cheerful-woman-showing-blank-smartphone.jpg",
+    "productPrice": "R$ 180,00"
+  },
+  {
+    "productName": "Samsung Galaxy Note 20 Ultra",
+    "productDescription": "Samsung Galaxy Note 20 Ultra com 512GB",
+    "productImg": "https://st2.depositphotos.com/1017228/9399/i/450/depositphotos_93990140-stock-photo-cheerful-woman-showing-blank-smartphone.jpg",
+    "productPrice": "R$ 190,00"
+  },
+  {
+    "productName": "Xiaomi Mi 10T Pro",
+    "productDescription": "Xiaomi Mi 10T Pro com 256GB",
+    "productImg": "https://st2.depositphotos.com/1017228/9399/i/450/depositphotos_93990140-stock-photo-cheerful-woman-showing-blank-smartphone.jpg",
+    "productPrice": "R$ 200,00"
+  },
+  {
+    "productName": "OnePlus 8T",
+    "productDescription": "OnePlus 8T com 256GB",
+    "productImg": "https://st2.depositphotos.com/1017228/9399/i/450/depositphotos_93990140-stock-photo-cheerful-woman-showing-blank-smartphone.jpg",
+    "productPrice": "R$ 210,00"
+  },
+  {
+    "productName": "Google Pixel 4a",
+    "productDescription": "Google Pixel 4a com 128GB",
+    "productImg": "https://st2.depositphotos.com/1017228/9399/i/450/depositphotos_93990140-stock-photo-cheerful-woman-showing-blank-smartphone.jpg",
+    "productPrice": "R$ 220,00"
+  },
+  {
+    "productName": "Sony Xperia 5 II",
+    "productDescription": "Sony Xperia 5 II com 128GB",
+    "productImg": "https://st2.depositphotos.com/1017228/9399/i/450/depositphotos_93990140-stock-photo-cheerful-woman-showing-blank-smartphone.jpg",
+    "productPrice": "R$ 230,00"
+  },
+  {
+    "productName": "Huawei Mate 40 Pro",
+    "productDescription": "Huawei Mate 40 Pro com 256GB",
+    "productImg": "https://st2.depositphotos.com/1017228/9399/i/450/depositphotos_93990140-stock-photo-cheerful-woman-showing-blank-smartphone.jpg",
+    "productPrice": "R$ 240,00"
+  },
+  {
+    "productName": "Nokia 7.2",
+    "productDescription": "Nokia 7.2 com 128GB",
+    "productImg": "https://st2.depositphotos.com/1017228/9399/i/450/depositphotos_93990140-stock-photo-cheerful-woman-showing-blank-smartphone.jpg",
+    "productPrice": "R$ 250,00"
+  },
+  {
+    "productName": "Motorola Moto G100",
+    "productDescription": "Motorola Moto G100 com 128GB",
+    "productImg": "https://st2.depositphotos.com/1017228/9399/i/450/depositphotos_93990140-stock-photo-cheerful-woman-showing-blank-smartphone.jpg",
+    "productPrice": "R$ 260,00"
+  },
+  {
+    "productName": "Asus Zenfone 7 Pro",
+    "productDescription": "Asus Zenfone 7 Pro com 256GB",
+    "productImg": "https://st2.depositphotos.com/1017228/9399/i/450/depositphotos_93990140-stock-photo-cheerful-woman-showing-blank-smartphone.jpg",
+    "productPrice": "R$ 270,00"
+  },
+  {
+    "productName": "LG Velvet",
+    "productDescription": "LG Velvet com 128GB",
+    "productImg": "https://st2.depositphotos.com/1017228/9399/i/450/depositphotos_93990140-stock-photo-cheerful-woman-showing-blank-smartphone.jpg",
+    "productPrice": "R$ 280,00"
+  },
+  {
+    "productName": "Oppo Reno 5 Pro",
+    "productDescription": "Oppo Reno 5 Pro com 256GB",
+    "productImg": "https://st2.depositphotos.com/1017228/9399/i/450/depositphotos_93990140-stock-photo-cheerful-woman-showing-blank-smartphone.jpg",
+    "productPrice": "R$ 290,00"
+  },
+  {
+    "productName": "Realme X50 Pro",
+    "productDescription": "Realme X50 Pro com 256GB",
+    "productImg": "https://st2.depositphotos.com/1017228/9399/i/450/depositphotos_93990140-stock-photo-cheerful-woman-showing-blank-smartphone.jpg",
+    "productPrice": "R$ 300,00"
+  },
+  {
+    "productName": "Vivo V21",
+    "productDescription": "Vivo V21 com 128GB",
+    "productImg": "https://st2.depositphotos.com/1017228/9399/i/450/depositphotos_93990140-stock-photo-cheerful-woman-showing-blank-smartphone.jpg",
+    "productPrice": "R$ 310,00"
+  },
+  {
+    "productName": "ZTE Nubia Red Magic 5G",
+    "productDescription": "ZTE Nubia Red Magic 5G com 256GB",
+    "productImg": "https://st2.depositphotos.com/1017228/9399/i/450/depositphotos_93990140-stock-photo-cheerful-woman-showing-blank-smartphone.jpg",
+    "productPrice": "R$ 320,00"
+  },
+  {
+    "productName": "Lenovo K12 Pro",
+    "productDescription": "Lenovo K12 Pro com 128GB",
+    "productImg": "https://st2.depositphotos.com/1017228/9399/i/450/depositphotos_93990140-stock-photo-cheerful-woman-showing-blank-smartphone.jpg",
+    "productPrice": "R$ 330,00"
+  },
+  {
+    "productName": "iPhone SE",
+    "productDescription": "Apple iPhone SE com 64GB",
+    "productImg": "https://st2.depositphotos.com/1017228/9399/i/450/depositphotos_93990140-stock-photo-cheerful-woman-showing-blank-smartphone.jpg",
+    "productPrice": "R$ 340,00"
+  },
+  {
+    "productName": "Samsung Galaxy A52",
+    "productDescription": "Samsung Galaxy A52 com 128GB",
+    "productImg": "https://st2.depositphotos.com/1017228/9399/i/450/depositphotos_93990140-stock-photo-cheerful-woman-showing-blank-smartphone.jpg",
+    "productPrice": "R$ 350,00"
+  },
+  {
+    "productName": "Xiaomi Redmi Note 10",
+    "productDescription": "Xiaomi Redmi Note 10 com 128GB",
+    "productImg": "https://st2.depositphotos.com/1017228/9399/i/450/depositphotos_93990140-stock-photo-cheerful-woman-showing-blank-smartphone.jpg",
+    "productPrice": "R$ 360,00"
+  },
+  {
+    "productName": "OnePlus Nord",
+    "productDescription": "OnePlus Nord com 128GB",
+    "productImg": "https://st2.depositphotos.com/1017228/9399/i/450/depositphotos_93990140-stock-photo-cheerful-woman-showing-blank-smartphone.jpg",
+    "productPrice": "R$ 370,00"
+  },
+  {
+    "productName": "Google Pixel 4 XL",
+    "productDescription": "Google Pixel 4 XL com 128GB",
+    "productImg": "https://st2.depositphotos.com/1017228/9399/i/450/depositphotos_93990140-stock-photo-cheerful-woman-showing-blank-smartphone.jpg",
+    "productPrice": "R$ 380,00"
+  },
+  {
+    "productName": "Sony Xperia 10 II",
+    "productDescription": "Sony Xperia 10 II com 128GB",
+    "productImg": "https://st2.depositphotos.com/1017228/9399/i/450/depositphotos_93990140-stock-photo-cheerful-woman-showing-blank-smartphone.jpg",
+    "productPrice": "R$ 390,00"
+  },
+  {
+    "productName": "Huawei P30 Pro",
+    "productDescription": "Huawei P30 Pro com 256GB",
+    "productImg": "https://st2.depositphotos.com/1017228/9399/i/450/depositphotos_93990140-stock-photo-cheerful-woman-showing-blank-smartphone.jpg",
+    "productPrice": "R$ 400,00"
+  },
+  {
+    "productName": "Nokia 6.2",
+    "productDescription": "Nokia 6.2 com 64GB",
+    "productImg": "https://st2.depositphotos.com/1017228/9399/i/450/depositphotos_93990140-stock-photo-cheerful-woman-showing-blank-smartphone.jpg",
+    "productPrice": "R$ 410,00"
+  },
+  {
+    "productName": "Motorola Moto G9 Plus",
+    "productDescription": "Motorola Moto G9 Plus com 128GB",
+    "productImg": "https://st2.depositphotos.com/1017228/9399/i/450/depositphotos_93990140-stock-photo-cheerful-woman-showing-blank-smartphone.jpg",
+    "productPrice": "R$ 420,00"
+  },
+  {
+    "productName": "Asus ROG Phone 3",
+    "productDescription": "Asus ROG Phone 3 com 512GB",
+    "productImg": "https://st2.depositphotos.com/1017228/9399/i/450/depositphotos_93990140-stock-photo-cheerful-woman-showing-blank-smartphone.jpg",
+    "productPrice": "R$ 430,00"
+  },
+  {
+    "productName": "LG G8X ThinQ",
+    "productDescription": "LG G8X ThinQ com 128GB",
+    "productImg": "https://st2.depositphotos.com/1017228/9399/i/450/depositphotos_93990140-stock-photo-cheerful-woman-showing-blank-smartphone.jpg",
+    "productPrice": "R$ 440,00"
+  },
+  {
+    "productName": "Oppo A93",
+    "productDescription": "Oppo A93 com 128GB",
+    "productImg": "https://st2.depositphotos.com/1017228/9399/i/450/depositphotos_93990140-stock-photo-cheerful-woman-showing-blank-smartphone.jpg",
+    "productPrice": "R$ 450,00"
+  },
+  {
+    "productName": "Realme 7 Pro",
+    "productDescription": "Realme 7 Pro com 128GB",
+    "productImg": "https://st2.depositphotos.com/1017228/9399/i/450/depositphotos_93990140-stock-photo-cheerful-woman-showing-blank-smartphone.jpg",
+    "productPrice": "R$ 460,00"
+  },
+  {
+    "productName": "Vivo Y20",
+    "productDescription": "Vivo Y20 com 64GB",
+    "productImg": "https://st2.depositphotos.com/1017228/9399/i/450/depositphotos_93990140-stock-photo-cheerful-woman-showing-blank-smartphone.jpg",
+    "productPrice": "R$ 470,00"
+  },
+  {
+    "productName": "ZTE Blade V2020",
+    "productDescription": "ZTE Blade V2020 com 128GB",
+    "productImg": "https://st2.depositphotos.com/1017228/9399/i/450/depositphotos_93990140-stock-photo-cheerful-woman-showing-blank-smartphone.jpg",
+    "productPrice": "R$ 480,00"
+  },
+  {
+    "productName": "Lenovo Legion Pro",
+    "productDescription": "Lenovo Legion Pro com 512GB",
+    "productImg": "https://st2.depositphotos.com/1017228/9399/i/450/depositphotos_93990140-stock-photo-cheerful-woman-showing-blank-smartphone.jpg",
+    "productPrice": "R$ 490,00"
+  },
+  {
+    "productName": "iPhone 11",
+    "productDescription": "Apple iPhone 11 com 128GB",
+    "productImg": "https://st2.depositphotos.com/1017228/9399/i/450/depositphotos_93990140-stock-photo-cheerful-woman-showing-blank-smartphone.jpg",
+    "productPrice": "R$ 500,00"
+  }
+]
