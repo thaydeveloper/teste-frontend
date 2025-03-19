@@ -1,0 +1,38 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 🔧
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Remove package-lock.json
+        run: rm -f package-lock.json
+
+      - name: Install dependencies 📦
+        run: npm install --no-package-lock
+
+      - name: Build and Deploy 🚀
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "github-actions@github.com"
+          npm run deploy
+        env:
+          BASE_URL: '/teste-frontend/'
+          NODE_ENV: production
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
