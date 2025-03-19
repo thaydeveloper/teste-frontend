@@ -42,7 +42,6 @@ export default function Modal({
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, [isOpen, onClose]);
 
-  // Manipulação do focus trap
   const handleTabKey = event => {
     if (!modalRef.current) return;
 
