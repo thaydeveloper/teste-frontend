@@ -11,7 +11,7 @@ function SearchBar({
   const [searchTerm, setSearchTerm] = useState(initialValue);
   const debounceTimerRef = useRef(null);
   const inputRef = useRef(null);
-  const id = useRef(`search-${Math.random().toString(36).substr(2, 9)}`);
+  const id = useRef(`search-${Math.random().toString(36).substring(2, 11)}`);
 
   useEffect(() => {
     setSearchTerm(initialValue);
@@ -62,7 +62,7 @@ function SearchBar({
         <input
           id={id.current}
           ref={inputRef}
-          type="search"
+          type="text" // Alterado de 'search' para 'text' para evitar botão nativo de limpar
           value={searchTerm}
           onChange={handleChange}
           className="block w-full pl-10 pr-10 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
