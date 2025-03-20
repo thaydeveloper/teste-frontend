@@ -148,6 +148,26 @@ O projeto utiliza os seguintes arquivos de configuração:
 
 5. Acesse a aplicação em `http://localhost:3000/teste-frontend/`
 
+## 🧪 Testes
+
+O projeto utiliza Vitest e React Testing Library para testes automatizados.
+
+### Como executar os testes
+
+```bash
+# Instalar dependências primeiro (se ainda não instalou)
+npm install
+
+# Executar todos os testes uma vez
+npm test
+
+```
+
+### Ferramentas de teste
+
+- **Vitest**: Framework de testes rápido e nativo do Vite
+- **React Testing Library**: Para testes baseados em comportamento do usuário
+
 ## 🚀 Como Executar em Produção
 
 1. Configure corretamente o arquivo `.env` (veja a seção "Configuração de Ambiente")
